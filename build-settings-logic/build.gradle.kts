@@ -9,13 +9,14 @@ plugins {
 description = "Conventions for use in settings.gradle.kts scripts"
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 dependencies {
     implementation(libs.gradlePlugin.gradle.develocity)
     implementation(libs.gradlePlugin.gradle.customUserData)
     implementation(libs.gradlePlugin.gradle.foojayToolchains)
+    implementation(libs.gradlePlugin.nmcp)
 }
 
 

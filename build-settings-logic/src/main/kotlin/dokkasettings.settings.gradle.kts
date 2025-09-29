@@ -12,10 +12,16 @@
 // - develocity: https://docs.gradle.com/develocity/gradle-plugin/
 // - build cache: https://docs.gradle.org/8.4/userguide/build_cache.html#sec:build_cache_composite
 
+pluginManagement {
+    repositories {
+        maven("https://storage.googleapis.com/gradleup/m2")
+    }
+}
 plugins {
     id("com.gradle.develocity")
     id("com.gradle.common-custom-user-data-gradle-plugin") apply false
     id("org.gradle.toolchains.foojay-resolver-convention")
+    id("com.gradleup.nmcp.settings")
 }
 
 //region properties

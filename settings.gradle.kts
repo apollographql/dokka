@@ -34,6 +34,7 @@ dependencyResolutionManagement {
         maven("https://cache-redirector.jetbrains.com/intellij-dependencies") {
             name = "IjDependencies-JBCache"
         }
+        maven("https://storage.googleapis.com/gradleup/m2")
 
         //region Declare the Node.js & Yarn download repositories
         // Required by Gradle Node plugin: https://github.com/node-gradle/gradle-node-plugin/blob/3.5.1/docs/faq.md#is-this-plugin-compatible-with-centralized-repositories-declaration
@@ -66,7 +67,6 @@ dependencyResolutionManagement {
 
 plugins {
     id("dokkasettings")
-    id("com.gradleup.nmcp.settings").version("1.2.1-SNAPSHOT-1d9e71a84d180f116430908ea9cdc84e50c2fe38")
 }
 
 includeBuild("dokka-integration-tests")

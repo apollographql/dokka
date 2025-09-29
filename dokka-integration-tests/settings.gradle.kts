@@ -16,6 +16,7 @@ pluginManagement {
         maven("https://cache-redirector.jetbrains.com/plugins.gradle.org/m2") {
             name = "GradlePluginPortal-JBCache"
         }
+        maven("https://storage.googleapis.com/gradleup/m2")
     }
 }
 

@@ -6,7 +6,16 @@
 
 import dokkabuild.tasks.GenerateDokkaGradlePluginConstants
 import dokkabuild.utils.skipTestFixturesPublications
+import com.gradleup.librarian.gradle.Librarian
 
+buildscript {
+    dependencies {
+        classpath(libs.librarian) {
+            exclude(group = "org.jetbrains.dokka")
+            exclude(group = "org.jetbrains.kotlinx", module = "binary-compatibility-validator")
+        }
+    }
+}
 plugins {
     id("dokkabuild.gradle-plugin")
     `jvm-test-suite`
@@ -226,3 +235,18 @@ kotlin {
         }
     }
 }
+
+nmcpAggregation {
+    centralPortal {
+        username = System.getenv("SONATYPE_USERNAME")
+        password = System.getenv("SONATYPE_PASSWORD")
+    }
+}
+
+Librarian.registerGcsTask(
+    project = project,
+    provider { "apollo-previews" },
+    provider { "m2/" },
+    provider { System.getenv("GOOGLE_SERVICES_JSON") },
+    nmcpAggregation.allFiles
+)

@@ -11,6 +11,7 @@ gradlePlugin-kotlin = "2.2.0"
 # See: https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin
 gradlePlugin-android = "7.3.1"
 gradlePlugin-librarian = "0.2.0"
+gradlePlugin-nmcp = "1.2.1-SNAPSHOT-7edc98cb4a9349ed31f7138dd45d0dfbf7625f79"
 
 kotlinx-coroutines = "1.7.3"
 kotlinx-collections-immutable = "0.3.6"
@@ -105,7 +106,7 @@ gradlePlugin-gradle-develocity = { module = "com.gradle:develocity-gradle-plugin
 gradlePlugin-gradle-foojayToolchains = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "gradlePlugin-gradle-foojayToolchains" }
 
 gradlePlugin-androidApi = { module = "com.android.tools.build:gradle-api", version.ref = "gradlePlugin-android" }
-
+gradlePlugin-nmcp = { module = "com.gradleup.nmcp:com.gradleup.nmcp.gradle.plugin", version.ref = "gradlePlugin-nmcp"}
 #### Kotlin analysis ####
 kotlin-compiler = { module = "org.jetbrains.kotlin:kotlin-compiler", version.ref = "kotlin-compiler" }
 

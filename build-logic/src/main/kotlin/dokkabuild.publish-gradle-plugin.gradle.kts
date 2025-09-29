@@ -34,3 +34,8 @@ afterEvaluate {
             artifact(tasks.named("javadocJar"))
         }
 }
+
+tasks.withType(Sign::class.java).configureEach {
+    val signingKey = System.getenv("DOKKA_SIGN_KEY")?.takeIf(String::isNotBlank)
+    enabled = signingKey != null
+}
