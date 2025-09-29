@@ -10,6 +10,7 @@ bta-kotlin-language = "1.4"
 gradlePlugin-kotlin = "2.2.0"
 # See: https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin
 gradlePlugin-android = "7.3.1"
+gradlePlugin-nmcp = "1.1.0"
 
 kotlinx-coroutines = "1.7.3"
 kotlinx-collections-immutable = "0.3.6"
@@ -102,6 +103,7 @@ gradlePlugin-gradlePublish = { module = "com.gradle.publish:plugin-publish-plugi
 gradlePlugin-gradle-customUserData = { module = "com.gradle:common-custom-user-data-gradle-plugin", version.ref = "gradlePlugin-gradle-customUserData" }
 gradlePlugin-gradle-develocity = { module = "com.gradle:develocity-gradle-plugin", version.ref = "gradlePlugin-gradle-develocity" }
 gradlePlugin-gradle-foojayToolchains = { module = "org.gradle.toolchains:foojay-resolver", version.ref = "gradlePlugin-gradle-foojayToolchains" }
+gradlePlugin-nmcp = { module = "com.gradleup.nmcp:nmcp", version.ref = "gradlePlugin-nmcp" }
 
 gradlePlugin-androidApi = { module = "com.android.tools.build:gradle-api", version.ref = "gradlePlugin-android" }
 
@@ -176,3 +178,4 @@ kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 gradleNode = { id = "com.github.node-gradle.node", version.ref = "gradlePlugin-gradleNode" }
 shadow = { id = "com.gradleup.shadow", version.ref = "gradlePlugin-shadow" }
 gradlePluginPublish = { id = "com.gradle.plugin-publish", version.ref = "gradlePlugin-gradlePluginPublish" }
+nmcp-aggregation = { id = "com.gradleup.nmcp.aggregation", version.ref = "gradlePlugin-nmcp" }

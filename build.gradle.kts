@@ -5,6 +5,7 @@
 plugins {
     id("dokkabuild.base")
     idea
+    alias(libs.plugins.nmcp.aggregation)
 }
 
 val publishedIncludedBuilds = listOf("runner-cli", "dokka-gradle-plugin", "runner-maven-plugin")
@@ -130,5 +131,12 @@ idea {
                 "examples/gradle-v2/versioning-multimodule-example/docs/previousDocVersions/",
             )
         )
+    }
+}
+
+nmcpAggregation {
+    centralPortal {
+        username = System.getenv("SONATYPE_USERNAME")
+        password = System.getenv("SONATYPE_PASSWORD")
     }
 }

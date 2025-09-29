@@ -9,12 +9,13 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(11)
+    jvmToolchain(17)
 }
 
 dependencies {
     implementation(libs.gradlePlugin.kotlin)
     implementation(libs.gradlePlugin.shadow)
+    implementation(libs.gradlePlugin.nmcp)
     implementation("org.gradle.kotlin:gradle-kotlin-dsl-plugins:$expectedKotlinDslPluginsVersion")
     implementation(libs.gradlePlugin.gradlePublish)
 

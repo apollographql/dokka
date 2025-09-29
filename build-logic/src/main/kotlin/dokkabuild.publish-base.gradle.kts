@@ -7,6 +7,7 @@ plugins {
     `maven-publish`
     signing
     id("dokkabuild.dev-maven-publish")
+    id("com.gradleup.nmcp")
 }
 
 publishing {
