@@ -11,6 +11,7 @@ gradlePlugin-kotlin = "2.2.0"
 # See: https://kotlinlang.org/docs/gradle-configure-project.html#apply-the-plugin
 gradlePlugin-android = "7.3.1"
 gradlePlugin-nmcp = "1.1.0"
+gradlePlugin-librarian = "0.2.0"
 
 kotlinx-coroutines = "1.7.3"
 kotlinx-collections-immutable = "0.3.6"
@@ -167,6 +168,8 @@ kotest-junit5Runner = { module = "io.kotest:kotest-runner-junit5" }
 kotest-assertionsCore = { module = "io.kotest:kotest-assertions-core" }
 kotest-assertionsJson = { module = "io.kotest:kotest-assertions-json" }
 kotest-property = { module = "io.kotest:kotest-property" }
+
+librarian = { module = "com.gradleup.librarian:com.gradleup.librarian.gradle.plugin", version.ref = "gradlePlugin-librarian" }
 
 [plugins]
 # Gradle Plugins that are applied directly to subprojects

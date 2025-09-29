@@ -1,7 +1,17 @@
+import com.gradleup.librarian.gradle.Librarian
+
 /*
  * Copyright 2014-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
  */
 
+buildscript {
+    dependencies {
+        classpath(libs.librarian) {
+            exclude(group = "org.jetbrains.dokka")
+            exclude(group = "org.jetbrains.kotlinx", module = "binary-compatibility-validator")
+        }
+    }
+}
 plugins {
     id("dokkabuild.base")
     idea
@@ -140,3 +150,11 @@ nmcpAggregation {
         password = System.getenv("SONATYPE_PASSWORD")
     }
 }
+
+Librarian.registerGcsTask(
+    project = project,
+    provider { "apollo-previews" },
+    provider { "m2" },
+    provider { System.getenv("LIBRARIAN_GOOGLE_SERVICES_JSON") },
+    nmcpAggregation.allFiles
+)
