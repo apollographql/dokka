@@ -15,7 +15,7 @@ buildscript {
 plugins {
     id("dokkabuild.base")
     idea
-    alias(libs.plugins.nmcp.aggregation)
+    id("com.gradleup.nmcp.aggregation")
 }
 
 val publishedIncludedBuilds = listOf("runner-cli", "dokka-gradle-plugin", "runner-maven-plugin")
@@ -155,6 +155,6 @@ Librarian.registerGcsTask(
     project = project,
     provider { "apollo-previews" },
     provider { "m2" },
-    provider { System.getenv("LIBRARIAN_GOOGLE_SERVICES_JSON") },
+    provider { System.getenv("GOOGLE_SERVICES_JSON") },
     nmcpAggregation.allFiles
 )

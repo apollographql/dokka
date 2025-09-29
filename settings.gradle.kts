@@ -16,6 +16,7 @@ pluginManagement {
         maven("https://cache-redirector.jetbrains.com/plugins.gradle.org/m2") {
             name = "GradlePluginPortal-JBCache"
         }
+        maven("https://storage.googleapis.com/gradleup/m2")
     }
 }
 
@@ -65,6 +66,7 @@ dependencyResolutionManagement {
 
 plugins {
     id("dokkasettings")
+    id("com.gradleup.nmcp.settings").version("1.2.1-SNAPSHOT-1d9e71a84d180f116430908ea9cdc84e50c2fe38")
 }
 
 includeBuild("dokka-integration-tests")

@@ -15,7 +15,6 @@ kotlin {
 dependencies {
     implementation(libs.gradlePlugin.kotlin)
     implementation(libs.gradlePlugin.shadow)
-    implementation(libs.gradlePlugin.nmcp)
     implementation("org.gradle.kotlin:gradle-kotlin-dsl-plugins:$expectedKotlinDslPluginsVersion")
     implementation(libs.gradlePlugin.gradlePublish)
 

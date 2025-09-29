@@ -7,7 +7,6 @@ plugins {
     `maven-publish`
     signing
     id("dokkabuild.dev-maven-publish")
-    id("com.gradleup.nmcp")
 }
 
 publishing {
@@ -62,15 +61,15 @@ publishing {
 }
 
 signing {
-    useInMemoryPgpKeys(
-        System.getenv("DOKKA_SIGN_KEY_ID")?.takeIf(String::isNotBlank),
-        System.getenv("DOKKA_SIGN_KEY")?.takeIf(String::isNotBlank),
-        System.getenv("DOKKA_SIGN_KEY_PASSPHRASE")?.takeIf(String::isNotBlank),
-    )
-    sign(publishing.publications)
-    // no signing should be required for locally published artifacts,
-    // as they are used for manual testing and running integration tests only
-    setRequired(provider { gradle.taskGraph.allTasks.any { it is PublishToMavenRepository } })
+    val signingKey = System.getenv("DOKKA_SIGN_KEY")?.takeIf(String::isNotBlank)
+    if (signingKey != null) {
+        useInMemoryPgpKeys(
+            System.getenv("DOKKA_SIGN_KEY_ID")?.takeIf(String::isNotBlank),
+            signingKey,
+            System.getenv("DOKKA_SIGN_KEY_PASSPHRASE")?.takeIf(String::isNotBlank),
+        )
+        sign(publishing.publications)
+    }
 }
 
 // This is a hack for a Gradle 8 problem, see https://github.com/gradle/gradle/issues/26091
